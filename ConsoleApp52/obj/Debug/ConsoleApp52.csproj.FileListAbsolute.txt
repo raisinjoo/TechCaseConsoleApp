@@ -15,3 +15,9 @@ C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\bin\Debug\System.ComponentM
 C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\bin\Debug\EPPlus.xml
 C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\obj\Debug\ConsoleApp52.Migrations.first.resources
 C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\obj\Debug\ConsoleApp52.csproj.GenerateResource.cache
+C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\obj\Debug\ConsoleApp52.Properties.Resources.resources
+C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\bin\Debug\Data.dll
+C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\bin\Debug\Parser.dll
+C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\bin\Debug\Data.pdb
+C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\bin\Debug\Data.dll.config
+C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\bin\Debug\Parser.pdb

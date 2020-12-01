@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp52", "ConsoleApp52\ConsoleApp52.csproj", "{AAB90592-0363-448A-8E30-0AA13F812C9B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{7B3CBE55-5AA8-432F-8DEB-3E6128B86E3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parser", "Parser\Parser.csproj", "{4298889C-6F86-4F53-A6E7-7D57FB611134}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{AAB90592-0363-448A-8E30-0AA13F812C9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAB90592-0363-448A-8E30-0AA13F812C9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAB90592-0363-448A-8E30-0AA13F812C9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B3CBE55-5AA8-432F-8DEB-3E6128B86E3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B3CBE55-5AA8-432F-8DEB-3E6128B86E3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B3CBE55-5AA8-432F-8DEB-3E6128B86E3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B3CBE55-5AA8-432F-8DEB-3E6128B86E3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4298889C-6F86-4F53-A6E7-7D57FB611134}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4298889C-6F86-4F53-A6E7-7D57FB611134}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4298889C-6F86-4F53-A6E7-7D57FB611134}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4298889C-6F86-4F53-A6E7-7D57FB611134}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

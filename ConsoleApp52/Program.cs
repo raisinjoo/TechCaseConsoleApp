@@ -1,12 +1,12 @@
 ﻿using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
+using Data.Context;
+using Data;
+using Parser.Models;
 
 namespace ConsoleApp52
 {
@@ -96,32 +96,7 @@ namespace ConsoleApp52
         }
     }
 
-    /// <summary>
-    /// Класс, описывающий необходимые поля для парсинга и дальнейшей работы с таблицами
-    /// </summary>
-    class TrainTable
-    {
-        public int TrainNumber { get; set; }
-        public int TrainIndex { get; set; }
-        public string TrainIndexCombined { get; set; }
-        public int FromStationNameId { get; set; }
-        public string FromStationName { get; set; }
-        public int ToStationNameId { get; set; }
-        public string ToStationName { get; set; }
-        public int CarrigeId { get; set; }
-        public int LastStationNameId { get; set; }
-        public string LastStationName { get; set; }
-        public DateTime WhenLastOperation { get; set; }
-        public string LastOperationName { get; set; }
-        public string InvoiceNum { get; set; }
-        public int PositionInTrain { get; set; }
-        public int OperationId { get; set; }
-        public int CarNumber { get; set; }
-        public int CargoId { get; set; }
-        public string FreightEtsngName { get; set; }
-        public int FreightTotalWeightKg { get; set; }
-
-    }
+   
     class Program
     {
         /// <summary>
@@ -316,40 +291,8 @@ namespace ConsoleApp52
 
             //Занесение таблиц Грузы, Операции и Станции в общую таблицу вместе с Id
 
-            foreach (TrainTable t in tt)
-            {
-                foreach (Station s in Stations)
-                {
-                    if (t.FromStationName == s.StationName)
-                    {
-                        t.FromStationNameId = s.StationId;
-                    }
-                    if (t.ToStationName == s.StationName)
-                    {
-                        t.ToStationNameId = s.StationId;
-                    }
-                    if (t.LastStationName == s.StationName)
-                    {
-                        t.LastStationNameId = s.StationId;
-                    }
-                }
-                foreach (Cargo c in Cargoes)
-                {
-                    if (t.FreightEtsngName == c.FreightEtsngName)
-                    {
-                        t.CargoId = c.CargoId;
-                    }
-                }
-                foreach (Operation o in Operations)
-                {
-                    if (t.WhenLastOperation == o.WhenLastOperation
-                        && t.LastOperationName == o.LastOperationName
-                        && t.LastStationNameId == o.LastStationId)
-                    {
-                        t.OperationId = o.OperationId;
-                    }
-                }
-            }
+            Data.Controllers.TrainTableController.AddStationCargoOperationId(tt, Stations, Cargoes, Operations);
+
             //Создание таблицы Вагоны
 
             var Carriges = new List<Carrige>();
@@ -378,21 +321,7 @@ namespace ConsoleApp52
 
             // Добавление Id Вагонов в общую таблицу
 
-            foreach (TrainTable t in tt)
-            {
-                foreach (Carrige cr in Carriges)
-                {
-                    if (t.CarNumber == cr.CarNumber &&
-                        t.PositionInTrain == cr.PositionInTrain &&
-                        t.InvoiceNum == cr.InvoiceNum &&
-                        t.OperationId == cr.OperationId &&
-                        t.CargoId == cr.CargoId &&
-                        t.FreightTotalWeightKg == cr.FreightTotalWeightKg)
-                    {
-                        t.CarrigeId = cr.CarrigeId;
-                    }
-                }
-            }
+            Data.Controllers.TrainTableController.AddCarrigeId(tt, Carriges);
 
             //Создание таблицы Поезда
 
@@ -477,133 +406,10 @@ namespace ConsoleApp52
                 db.SaveChanges();
             }
         }
-        
-        /// <summary>
-        /// Метод для парсинга xml-документа
-        /// </summary>
-        /// <param name="doc"></param>
-        /// <returns></returns>
-        static private List<TrainTable> ParseToList(XmlDocument doc)
-        {
-            int TrainNumber_temp = 0;
-            int TrainIndex_temp = 0;
-            string TrainIndexCombined_temp = "";
-            string FromStationName_temp = "";
-            string ToStationName_temp = "";
-            string LastStationName_temp = "";
-            DateTime WhenLastOperation_temp = DateTime.Today;
-            string LastOperationName_temp = "";
-            string InvoiceNum_temp = "";
-            int PositionInTrain_temp = 0;
-            int CarNumber_temp = 0;
-            string FreightEtsngName_temp = "";
-            int FreightTotalWeightKg_temp = 0;
-
-            List<TrainTable> Trains = new List<TrainTable>();
-
-            //Счетчик столбцов (тэгов в xml-документе). Всего обходится 12 тэгов.
-            int CountRow = 0;
-
-            foreach (XmlNode root in doc.DocumentElement)
-            {
-                foreach (XmlNode row in root.ChildNodes)
-                {
-                    if (CountRow < 12)
-                    {
-                        if (row.Name == "TrainNumber")
-                        {
-                            TrainNumber_temp = Convert.ToInt32(row.InnerText);
-                            CountRow++;
-                        }
-                        if (row.Name == "TrainIndexCombined")
-                        {
-                            TrainIndexCombined_temp = row.InnerText;
-                            TrainIndex_temp = Convert.ToInt32(row.InnerText.Split('-')[1]);
-                            CountRow++;
-                        }
-                        if (row.Name == "FromStationName")
-                        {
-                            FromStationName_temp = row.InnerText;
-                            CountRow++;
-                        }
-                        if (row.Name == "ToStationName")
-                        {
-                            ToStationName_temp = row.InnerText;
-                            CountRow++;
-                        }
-                        if (row.Name == "LastStationName")
-                        {
-                            LastStationName_temp = (row.InnerText);
-                            CountRow++;
-                        }
-                        if (row.Name == "WhenLastOperation")
-                        {
-                            WhenLastOperation_temp = Convert.ToDateTime(row.InnerText);
-                            CountRow++;
-                        }
-                        if (row.Name == "LastOperationName")
-                        {
-                            LastOperationName_temp = row.InnerText;
-                            CountRow++;
-                        }
-                        if (row.Name == "InvoiceNum")
-                        {
-                            InvoiceNum_temp = row.InnerText;
-                            CountRow++;
-                        }
-                        if (row.Name == "PositionInTrain")
-                        {
-                            PositionInTrain_temp = Convert.ToInt32(row.InnerText);
-                            CountRow++;
-                        }
-                        if (row.Name == "CarNumber")
-                        {
-                            CarNumber_temp = Convert.ToInt32(row.InnerText);
-                            CountRow++;
-                        }
-                        if (row.Name == "FreightEtsngName")
-                        {
-                            FreightEtsngName_temp = row.InnerText;
-                            CountRow++;
-                        }
-                        if (row.Name == "FreightTotalWeightKg")
-                        {
-                            FreightTotalWeightKg_temp = Convert.ToInt32(row.InnerText);
-                            CountRow++;
-                        }
-                    }
-
-                    if (CountRow >= 12)
-                    {
-                        Trains.Add(new TrainTable
-                        {
-                            TrainNumber = TrainNumber_temp,
-                            TrainIndex= TrainIndex_temp,
-                            TrainIndexCombined = TrainIndexCombined_temp,
-                            FromStationName = FromStationName_temp,
-                            ToStationName = ToStationName_temp,
-                            LastStationName = LastStationName_temp,
-                            WhenLastOperation = WhenLastOperation_temp,
-                            LastOperationName = LastOperationName_temp,
-                            InvoiceNum = InvoiceNum_temp,
-                            PositionInTrain = PositionInTrain_temp,
-                            CarNumber = CarNumber_temp,
-                            FreightEtsngName = FreightEtsngName_temp,
-                            FreightTotalWeightKg = FreightTotalWeightKg_temp
-                        });
-                        CountRow = 0;
-                    }
-                }
-            }
-            return Trains;
-        }
-
         static void Main(string[] args)
         {
             XmlDocument xd = new XmlDocument();
-            xd.Load(@"C:\Users\Acer\Downloads\Тестовое задание для программиста систем отчетности\Data.xml");
-
-            List<TrainTable> tt = ParseToList(xd);
+            xd.Load(@"C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\Resources\Data.xml");
 
             ///<example>
             ///Для создание таблиц в бд использовать AddToDB(tt);

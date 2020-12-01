@@ -5,14 +5,14 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ConsoleApp52.ContextTrain>
+    internal sealed class Configuration : DbMigrationsConfiguration<Data.Context.ContextTrain>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(ConsoleApp52.ContextTrain context)
+        protected override void Seed(Data.Context.ContextTrain context)
         {
             //  This method will be called after migrating to the latest version.
 
