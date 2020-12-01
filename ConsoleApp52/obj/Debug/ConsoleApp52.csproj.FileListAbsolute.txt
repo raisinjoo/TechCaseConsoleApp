@@ -1,0 +1,17 @@
+C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\bin\Debug\ConsoleApp52.exe.config
+C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\bin\Debug\ConsoleApp52.exe
+C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\bin\Debug\ConsoleApp52.pdb
+C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\bin\Debug\EntityFramework.dll
+C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\bin\Debug\EntityFramework.xml
+C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\obj\Debug\ConsoleApp52.csprojAssemblyReference.cache
+C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\obj\Debug\ConsoleApp52.csproj.CoreCompileInputs.cache
+C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\obj\Debug\ConsoleApp52.csproj.CopyComplete
+C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\obj\Debug\ConsoleApp52.exe
+C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\obj\Debug\ConsoleApp52.pdb
+C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\bin\Debug\EPPlus.dll
+C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\bin\Debug\EPPlus.xml
+C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\obj\Debug\ConsoleApp52.Migrations.first.resources
+C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\obj\Debug\ConsoleApp52.csproj.GenerateResource.cache
