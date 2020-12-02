@@ -91,9 +91,15 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Data.xml" />
+    <EmbeddedResource Include="Resources\Data.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataBase\Report.csproj">
+      <Project>{3591a7ab-7c10-4f78-ba0b-6f55b4dd7659}</Project>
+      <Name>Report</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Data\Data.csproj">
       <Project>{7b3cbe55-5aa8-432f-8deb-3e6128b86e3f}</Project>
       <Name>Data</Name>

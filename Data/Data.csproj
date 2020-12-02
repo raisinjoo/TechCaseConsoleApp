@@ -53,7 +53,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\ContextTrain.cs" />
+    <Compile Include="Controllers\AddingToDatabase.cs" />
     <Compile Include="Controllers\TrainTableController.cs" />
+    <Compile Include="ModelsComparers\CargoComparer.cs" />
+    <Compile Include="ModelsComparers\CarrigeComparer.cs" />
+    <Compile Include="ModelsComparers\OperationComparer.cs" />
+    <Compile Include="ModelsComparers\StationComparer.cs" />
+    <Compile Include="ModelsComparers\TrainComparer.cs" />
     <Compile Include="Models\Cargo.cs" />
     <Compile Include="Models\Carrige.cs" />
     <Compile Include="Models\Operation.cs" />
