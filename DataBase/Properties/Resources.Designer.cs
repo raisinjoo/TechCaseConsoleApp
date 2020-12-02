@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ConsoleApp.Properties {
+namespace Report.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace ConsoleApp.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ConsoleApp52.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DataBase.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,22 +61,12 @@ namespace ConsoleApp.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-        ///&lt;Root&gt;
-        ///  &lt;row&gt;
-        ///    &lt;TrainNumber&gt;2236&lt;/TrainNumber&gt;
-        ///    &lt;TrainIndexCombined&gt;86560-725-98470&lt;/TrainIndexCombined&gt;
-        ///    &lt;FromStationName&gt;САРБАЛА&lt;/FromStationName&gt;
-        ///    &lt;ToStationName&gt;НАХОДКА (ЭКСП.)&lt;/ToStationName&gt;
-        ///    &lt;LastStationName&gt;ЧЕРНОРЕЧЕНСКАЯ&lt;/LastStationName&gt;
-        ///    &lt;WhenLastOperation&gt;30.06.2019 14:07:00&lt;/WhenLastOperation&gt;
-        ///    &lt;LastOperationName&gt;ОТПРАВЛЕНИЕ  ВАГОНА В СОСТАВЕ ПОЕЗДА СО СТАНЦИИ&lt;/LastOperationName&gt;
-        ///    &lt;InvoiceNum&gt;ЭЛ598121&lt;/InvoiceNum&gt;
-        ///    &lt;PositionInTr [остаток строки не уместился]&quot;;.
+        ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static string Data {
+        internal static byte[] NL_Template {
             get {
-                return ResourceManager.GetString("Data", resourceCulture);
+                object obj = ResourceManager.GetObject("NL_Template", resourceCulture);
+                return ((byte[])(obj));
             }
         }
     }

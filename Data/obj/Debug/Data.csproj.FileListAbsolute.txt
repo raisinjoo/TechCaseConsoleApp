@@ -12,3 +12,6 @@ C:\Users\Acer\source\repos\ConsoleApp52\Data\bin\Debug\Parser.pdb
 C:\Users\Acer\source\repos\ConsoleApp52\Data\bin\Debug\EntityFramework.xml
 C:\Users\Acer\source\repos\ConsoleApp52\Data\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Acer\source\repos\ConsoleApp52\Data\obj\Debug\Data.csproj.CopyComplete
+C:\Users\Acer\source\repos\ConsoleApp52\Data\obj\Debug\Data.Migrations.InitialCreate.resources
+C:\Users\Acer\source\repos\ConsoleApp52\Data\obj\Debug\Data.csproj.GenerateResource.cache
+C:\Users\Acer\source\repos\ConsoleApp52\Data\obj\Debug\Data.Migrations.Creatingthetables.resources

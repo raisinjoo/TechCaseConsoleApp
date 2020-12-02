@@ -4,11 +4,8 @@ using Report.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Xml;
-using System.Resources;
-using System.Reflection;
-using System.IO;
 
-namespace ConsoleApp52
+namespace ConsoleApp
 {
     class Program
     {
@@ -23,14 +20,24 @@ namespace ConsoleApp52
             ///Для создание таблиц в бд использовать AddingToDatabase.AddToDB(tt);
             ///</example>
 
-            Console.WriteLine("Номер поезда:");
-            int TrainNumber = Convert.ToInt32(Console.ReadLine());
+            int TrainNumber = 2236;
+            string LastStation = "ЧЕРНОРЕЧЕНСКАЯ";
+            DateTime WhenLastOperation = Convert.ToDateTime("30.06.2019 14:07:00");
 
-            Console.WriteLine("Станция дислокации:");
-            string LastStation = Console.ReadLine().ToUpper();
+            Console.WriteLine("Задать значения для отчета? Y/N");
+            string answer = Console.ReadLine();
 
-            Console.WriteLine("Дата и время:");
-            DateTime WhenLastOperation = Convert.ToDateTime(Console.ReadLine());
+            if (answer == "Y")
+            {
+                Console.WriteLine("Номер поезда:");
+                TrainNumber = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Станция дислокации:");
+                LastStation = Console.ReadLine().ToUpper();
+
+                Console.WriteLine("Дата и время:");
+                WhenLastOperation = Convert.ToDateTime(Console.ReadLine());
+            }
 
             ExcelReport.ToExcel(TrainNumber, LastStation, WhenLastOperation);
 

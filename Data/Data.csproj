@@ -55,6 +55,15 @@
     <Compile Include="Context\ContextTrain.cs" />
     <Compile Include="Controllers\AddingToDatabase.cs" />
     <Compile Include="Controllers\TrainTableController.cs" />
+    <Compile Include="Migrations\202012021855178_InitialCreate.cs" />
+    <Compile Include="Migrations\202012021855178_InitialCreate.designer.cs">
+      <DependentUpon>202012021855178_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012021907251_Creating the tables.cs" />
+    <Compile Include="Migrations\202012021907251_Creating the tables.designer.cs">
+      <DependentUpon>202012021907251_Creating the tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelsComparers\CargoComparer.cs" />
     <Compile Include="ModelsComparers\CarrigeComparer.cs" />
     <Compile Include="ModelsComparers\OperationComparer.cs" />
@@ -76,6 +85,14 @@
       <Project>{4298889c-6f86-4f53-a6e7-7d57fb611134}</Project>
       <Name>Parser</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202012021855178_InitialCreate.resx">
+      <DependentUpon>202012021855178_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012021907251_Creating the tables.resx">
+      <DependentUpon>202012021907251_Creating the tables.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

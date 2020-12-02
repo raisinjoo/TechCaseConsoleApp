@@ -18,3 +18,6 @@ C:\Users\Acer\source\repos\ConsoleApp52\DataBase\bin\Debug\EntityFramework.xml
 C:\Users\Acer\source\repos\ConsoleApp52\DataBase\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Acer\source\repos\ConsoleApp52\DataBase\bin\Debug\EPPlus.xml
 C:\Users\Acer\source\repos\ConsoleApp52\DataBase\obj\Debug\Report.csproj.CopyComplete
+C:\Users\Acer\source\repos\ConsoleApp52\DataBase\obj\Debug\DataBase.Properties.Resources.resources
+C:\Users\Acer\source\repos\ConsoleApp52\DataBase\obj\Debug\Report.csproj.GenerateResource.cache
+C:\Users\Acer\source\repos\ConsoleApp52\DataBase\obj\Debug\DataBase.g.resources

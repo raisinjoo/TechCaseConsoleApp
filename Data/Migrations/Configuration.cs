@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp52.Migrations
+﻿namespace Data.Migrations
 {
     using System;
     using System.Data.Entity;
@@ -10,6 +10,7 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "Data.Context.ContextTrain";
         }
 
         protected override void Seed(Data.Context.ContextTrain context)
