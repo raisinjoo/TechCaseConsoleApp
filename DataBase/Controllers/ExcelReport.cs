@@ -52,7 +52,9 @@ namespace Report.Controllers
                                   FreightTotalWeightKg = c.FreightTotalWeightKg
                               }).ToList();
 
-                FileInfo file = new FileInfo(@"C:\Users\Acer\Downloads\Тестовое задание для программиста систем отчетности\NL_Template.xlsx");
+                string excelPath = Path.GetFullPath(@"Resources\NL_Template.xlsx");
+
+                FileInfo file = new FileInfo(excelPath);
 
                 ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 

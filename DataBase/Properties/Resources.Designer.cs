@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Report.Properties {
+namespace DataBase.Properties {
     using System;
     
     
@@ -57,16 +57,6 @@ namespace Report.Properties {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        internal static byte[] NL_Template {
-            get {
-                object obj = ResourceManager.GetObject("NL_Template", resourceCulture);
-                return ((byte[])(obj));
             }
         }
     }
