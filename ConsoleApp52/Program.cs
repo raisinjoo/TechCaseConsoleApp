@@ -1,4 +1,5 @@
-﻿using Data.Controllers;
+﻿using Data.Context;
+using Data.Controllers;
 using Parser.Models;
 using Report.Controllers;
 using System;
@@ -16,9 +17,13 @@ namespace ConsoleApp
             
             List<TrainTable> tt = Parser.Controllers.Parser.ParseToList(xd);
 
-            ///<example>
-            ///Для создание таблиц в бд использовать AddingToDatabase.AddToDB(tt);
-            ///</example>
+            using (ContextTrain db = new ContextTrain())
+            {
+                if (db.Database.Exists() == false)
+                {
+                    AddingToDatabase.AddToDB(tt);
+                }
+            }
 
             int TrainNumber = 2236;
             string LastStation = "ЧЕРНОРЕЧЕНСКАЯ";

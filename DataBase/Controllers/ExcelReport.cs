@@ -23,14 +23,6 @@ namespace Report.Controllers
         {
             using (var db = new ContextTrain())
             {
-                //List<TrainTable> Train_res = db.Database.SqlQuery<TrainTable>("SELECT TrainIndex,Carriges.CarNumber, " +
-                //    "Carriges.InvoiceNum, WhenLastOperation, Operations.LastOperationName, StationName, PositionInTrain, " +
-                //    "Cargoes.CargoId, FreightEtsngName, FreightTotalWeightKg  FROM Trains JOIN  Carriges ON Trains.CarrigeId = " +
-                //    "Carriges.CarrigeId JOIN Operations ON Carriges.OperationId = Operations.OperationId JOIN Cargoes ON " +
-                //    "Carriges.CargoId=Cargoes.CargoId JOIN Stations ON Operations.LastStationId=Stations.StationId WHERE " +
-                //    "TrainNumber = " + TrainNumber + " AND StationName = '" + LastStation + "' AND WhenLastOperation = '" +
-                //    WhenLastOperation + "' ORDER BY PositionInTrain ASC").ToList();
-
                 List<TrainTable> Train_res = (from t in db.Trains
                               join c in db.Carriges on t.CarrigeId equals c.CarrigeId
                               join o in db.Operations on c.OperationId equals o.OperationId
@@ -52,13 +44,15 @@ namespace Report.Controllers
                                   FreightTotalWeightKg = c.FreightTotalWeightKg
                               }).ToList();
 
-                string excelPath = Path.GetFullPath(@"Resources\NL_Template.xlsx");
+                string excelTemplatePath = Directory.GetCurrentDirectory() + "/NL_Template.xlsx";
+                FileInfo fileTemplate = new FileInfo(excelTemplatePath);
 
-                FileInfo file = new FileInfo(excelPath);
+                string excelFilePath = Directory.GetCurrentDirectory() + $"/NL-{DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss-fff")}.xlsx";
+                FileInfo file = new FileInfo(excelFilePath);
 
                 ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
-                using (ExcelPackage excelPackage = new ExcelPackage(file))
+                using (ExcelPackage excelPackage = new ExcelPackage(file, fileTemplate))
                 {
                     ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets[0];
 

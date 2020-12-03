@@ -91,7 +91,7 @@ namespace Data.Controllers
 
             //Занесение таблиц Грузы, Операции и Станции в общую таблицу вместе с Id
 
-            Data.Controllers.TrainTableController.AddStationCargoOperationId(tt, Stations, Cargoes, Operations);
+            TrainTableController.AddStationCargoOperationId(tt, Stations, Cargoes, Operations);
 
             //Создание таблицы Вагоны
 
@@ -121,7 +121,7 @@ namespace Data.Controllers
 
             // Добавление Id Вагонов в общую таблицу
 
-            Data.Controllers.TrainTableController.AddCarrigeId(tt, Carriges);
+            TrainTableController.AddCarrigeId(tt, Carriges);
 
             //Создание таблицы Поезда
 

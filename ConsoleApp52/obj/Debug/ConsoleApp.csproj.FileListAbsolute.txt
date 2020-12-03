@@ -24,4 +24,4 @@ C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\bin\Debug\EntityFramework.x
 C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\bin\Debug\EPPlus.xml
 C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\obj\Debug\ConsoleApp.csproj.CopyComplete
-C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\obj\Debug\ConsoleApp52.g.resources
+C:\Users\Acer\source\repos\ConsoleApp52\ConsoleApp52\bin\Debug\NL_Template.xlsx
